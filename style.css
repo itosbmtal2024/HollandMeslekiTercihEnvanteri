@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#quiz-container {
+    text-align: center;
+    padding: 20px; /* Dışarıdan biraz boşluk ekleyelim */
+}
+
+#email-input {
+    width: 100%; /* Genişliği tam olarak kapla */
+    padding: 10px; /* İçerik ile kenarlar arasındaki boşluk */
+    margin-bottom: 20px; /* E-posta kutusuyla sonraki içerik arasındaki boşluk */
+    border: 1px solid #ccc; /* Kenarlık */
+    border-radius: 5px; /* Kenarları yuvarla */
+}
+
+.question {
+    margin-bottom: 30px; /* Sorular arasındaki boşluğu artırdık */
+    border: 1px solid #ccc; /* Soru ve seçenekleri çevreleyen çerçeve */
+    border-radius: 5px;
+    padding: 20px; /* İçerik ile çerçeve arasındaki boşluk */
+}
+
+.question-number {
+    font-weight: bold; /* Soru numarasını kalın yap */
+    margin-bottom: 10px; /* Soru numarası ile sorunun arasında boşluk */
+}
+
+.options {
+    display: flex; /* Kutucukların yan yana görünmesi için flex kullan */
+    justify-content: space-between; /* Eşit boşluk bırak */
+}
+
+.option {
+    flex: 1; /* Her bir seçeneğin eşit genişlikte olmasını sağla */
+    margin: 0 5px; /* Yalnızca sağ ve sol arasında boşluk bırak */
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.option.selected {
+    background-color: #cce5ff;
+}
+
+#submit-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Yeni stil eklemeleri */
+#results {
+    margin-top: 20px;
+}
+
+#results-chart {
+    margin-top: 20px;
+    max-width: 100%; /* Grafik genişliğini ayarlayın */
+    height: 400px; /* Grafiğin yüksekliği */
+}
+
+/* Ekstra boşluklar için ayarlamalar */
+#quiz-form {
+    margin-top: 16200px; /* Formun üst boşluğunu ayarla */
+}
