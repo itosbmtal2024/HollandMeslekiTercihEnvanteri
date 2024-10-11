@@ -208,7 +208,7 @@ function sendResultsByEmail(email, percentages, maxCategory) {
     emailjs.send('itosbmtal2024', 'template_oj83twk', {
         to_email: email,
         message: `Sonuçlar:\n${Object.entries(percentages).map(([category, percentage]) => `${category}: %${percentage.toFixed(2)}`).join('\n')}\nEn Yüksek Kategori: ${maxCategory}`
-    }, '-rKmHqcLFJuT7uwKf')
+    }, '3LPxffVPvLwvcmGRO')
     .then((response) => {
         console.log('E-posta başarıyla gönderildi:', response.status, response.text);
         alert('Sonuçlar başarıyla e-posta adresinize gönderildi.');
