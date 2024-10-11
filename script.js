@@ -205,16 +205,19 @@ submitBtn.addEventListener('click', function() {
 
 // E-posta gönderme fonksiyonu (EmailJS ile)
 function sendResultsByEmail(email, percentages, maxCategory) {
-    emailjs.send('itosbmtal2024', 'template_oj83twk', {
+    const templateParams = {
         to_email: email,
         message: `Sonuçlar:\n${Object.entries(percentages).map(([category, percentage]) => `${category}: %${percentage.toFixed(2)}`).join('\n')}\nEn Yüksek Kategori: ${maxCategory}`
-    }, '3LPxffVPvLwvcmGRO')
+    };
+
+    emailjs.send('itosbmtal2024', 'template_oj83twk', templateParams)
     .then((response) => {
         console.log('E-posta başarıyla gönderildi:', response.status, response.text);
         alert('Sonuçlar başarıyla e-posta adresinize gönderildi.');
-    }, (error) => {
+    })
+    .catch((error) => {
         console.error('E-posta gönderim hatası:', error);
-        alert('E-posta gönderiminde bir sorun oluştu.');
+        alert('E-posta gönderiminde bir sorun oluştu. Hata: ' + error.text);
     });
 }
 
